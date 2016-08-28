@@ -17,21 +17,12 @@ export class AppComponent {
   }
 
   newGame():void {
-    if(this.intervalHandler){
-      this.stopEvolution();
-    }
     this.board = new Board(40, false);
     let patternBuilder = new PatternBuilder(this.board);
-    patternBuilder.createPulsarAt(5, 10)
-      .createPulsarAt(21, 10)
-      .createBlockAt(4,4)
-      .createBeehiveAt(3,24)
-      .createLoafAt(10,30)
-      .createBoatAt(18,30)
-      .createBlinkerAt(24,30);
+    patternBuilder
+      .createLWSSAt(5,5)
+      .createGliderAt(17,17);
 
-
-    // this.initializeCellsValue();
   }
 
 
@@ -39,7 +30,7 @@ export class AppComponent {
     window.clearInterval(this.intervalHandler);
   }
 
-  initializeCellsValue() {
+  initializeRandomCellsValue() {
     var size = this.board.cells.length;
     for (let i = 0; i < size; i++) {
       for (let j = 0; j < size; j++) {
@@ -47,7 +38,6 @@ export class AppComponent {
       }
     }
   };
-
 
   evolve() {
     this.board.evolve();
@@ -57,6 +47,6 @@ export class AppComponent {
     if(this.intervalHandler){
       this.stopEvolution();
     }
-    this.intervalHandler = setInterval(()=>this.evolve(), 150);
+    this.intervalHandler = setInterval(()=>this.evolve(), 250);
   }
 }

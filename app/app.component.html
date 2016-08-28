@@ -3,6 +3,7 @@
     <div *ngFor="let cell of row" style="display:inline-block; width: 15px;height: 15px;border:1px solid black;" [class.living]="cell">
     </div>
   </div>
-  <div (click)="startAutomaticEvolution()">EVOLVI</div>
-  <div (click)="stopEvolution()">NEW GAME</div>
 </div>
+<div (click)="startAutomaticEvolution()">PLAY</div>
+<div (click)="stopEvolution()">PAUSE</div>
+<div (click)="newGame()">RESET</div>
