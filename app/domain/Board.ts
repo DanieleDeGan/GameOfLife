@@ -72,7 +72,6 @@ export class Board implements IBoard {
         }
       }
     }
-
     return result;
   }
 

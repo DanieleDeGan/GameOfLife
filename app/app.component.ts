@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
-import {IBoard} from "./IBoard";
-import {Board} from "./Board";
+import {IBoard} from "./domain/IBoard";
+import {Board} from "./domain/Board";
 
 @Component({
   selector: 'my-app',
